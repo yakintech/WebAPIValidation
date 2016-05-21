@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-2.2.3.min.js"></script>
+    <script src="Scripts/ajaxOperations.js"></script>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <form id="frmNinja">
+        <div>
+            <label>Ad:</label>
+            <input type="text" name="Ad" />
+        </div>
+        <div>
+            <label>Title:</label>
+            <input type="text" name="Title" />
+        </div>
+        <div>
+            <label>EMail:</label>
+            <input type="text" name="EMail" />
+        </div>
+    </form>
+    <button>Test</button>
+</body>
+</html>
+<script>
+    $("button").click(function () {
+        var Ninja = new Object();
+        Ninja = $("#frmNinja").serialize();
+        var result = PolynomAjax("api/ninja/",Ninja,"POST")
+        alert(result);
+        
+    })
+</script>
